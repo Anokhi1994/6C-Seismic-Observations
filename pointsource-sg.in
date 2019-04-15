@@ -1,0 +1,56 @@
+fileio path=GivenExample1/Anokhi
+
+grid x=6e3 y=6e3 z=6e3 h=32 az=0 
+
+#grid x=100e3 y=100e3 z=100e3 nx=101 az=0
+time t=15
+
+# receiver
+
+
+# 5x5 array of seismograms added: array
+rec x=4.000 y=4.000 depth=100.000 file=array_x=4.000_y=4.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.250 y=4.000 depth=100.000 file=array_x=4.250_y=4.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.500 y=4.000 depth=100.000 file=array_x=4.500_y=4.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.750 y=4.000 depth=100.000 file=array_x=4.750_y=4.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=5.000 y=4.000 depth=100.000 file=array_x=5.000_y=4.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.000 y=4.250 depth=100.000 file=array_x=4.000_y=4.250_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.250 y=4.250 depth=100.000 file=array_x=4.250_y=4.250_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.500 y=4.250 depth=100.000 file=array_x=4.500_y=4.250_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.750 y=4.250 depth=100.000 file=array_x=4.750_y=4.250_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=5.000 y=4.250 depth=100.000 file=array_x=5.000_y=4.250_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.000 y=4.500 depth=100.000 file=array_x=4.000_y=4.500_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.250 y=4.500 depth=100.000 file=array_x=4.250_y=4.500_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.500 y=4.500 depth=100.000 file=array_x=4.500_y=4.500_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.750 y=4.500 depth=100.000 file=array_x=4.750_y=4.500_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=5.000 y=4.500 depth=100.000 file=array_x=5.000_y=4.500_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.000 y=4.750 depth=100.000 file=array_x=4.000_y=4.750_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.250 y=4.750 depth=100.000 file=array_x=4.250_y=4.750_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.500 y=4.750 depth=100.000 file=array_x=4.500_y=4.750_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.750 y=4.750 depth=100.000 file=array_x=4.750_y=4.750_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=5.000 y=4.750 depth=100.000 file=array_x=5.000_y=4.750_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.000 y=5.000 depth=100.000 file=array_x=4.000_y=5.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.250 y=5.000 depth=100.000 file=array_x=4.250_y=5.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.500 y=5.000 depth=100.000 file=array_x=4.500_y=5.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=4.750 y=5.000 depth=100.000 file=array_x=4.750_y=5.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+rec x=5.000 y=5.000 depth=100.000 file=array_x=5.000_y=5.000_z=100.000_ writeEvery=100 nsew=0 variables=velocity
+
+
+
+# source
+source lat=37 lon=-118 depth=1.0e3 mx=2 my=4 m0=10.4e14 strike=90 dip=0 rake=45 type=Gaussian f0=0.625 t0=6.67
+#source #x=0.5e3 #y=0.5e3 #depth=1.0e3#mx=2 #my=2# #m0=6.4e14 #strike=90 #dip=0 #rake=45 #type=Gaussian 
+block vp=800 vs=400 rho=1000
+
+
+
+# images
+#image mode=ux z=3 file=ps timeInterval=0.5
+#image mode=uy z=3 file=ps timeInterval=0.5
+#image mode=uz z=3 file=ps timeInterval=0.5
+
+#image mode=mu z=3 file=ps time=0
+#image mode=lambda z=3 file=ps time=0
+#image mode=rho z=3 file=ps time=0
+
+
