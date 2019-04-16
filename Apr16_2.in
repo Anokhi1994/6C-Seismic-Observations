@@ -1,0 +1,15 @@
+fileio path=Apr16_2
+grid x=2e3 y=2e3 z=2e3 h=20
+time t=5
+
+# receiver
+rec x=1.0e3 y=1.0e3 z=0 file=r1  variables=displacement usgsformat=1
+
+# source
+source x=5e2 y=5e2 depth=1.0e3 m0=6.4e14 strike=90 dip=0 rake=45 type=Gaussian freq=8 t0=0.5
+
+block vp=5800 vs=3200 rho=2000
+
+
+
+
