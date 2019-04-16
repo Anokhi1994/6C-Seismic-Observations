@@ -1,14 +1,22 @@
 fileio path=Apr16_2
-grid x=2e3 y=2e3 z=2e3 h=20
-time t=5
+grid x=6e3 y=6e3 z=6e3 h=20
+time steps=500
+supergrid=20
 
 # receiver
-rec x=1.0e3 y=1.0e3 z=0 file=r1  variables=displacement usgsformat=1
+#rec x=1.0e3 y=1.0e3 z=0 file=r1  variables=displacement usgsformat=1
+rec x=1.0e3 y=x=1.0e3 z=x=0 file=sta01 variables=curl sacformat=1 usgsformat=0
+rec x=x=1.0e3 y=x=1.0e3 z=0 file=sta01 sacformat=1 usgsformat=0
 
 # source
-source x=5e2 y=5e2 depth=1.0e3 m0=6.4e14 strike=90 dip=0 rake=45 type=Gaussian freq=8 t0=0.5
+#source x=5e2 y=5e2 depth=1.0e3 m0=6.4e14 strike=90 dip=0 rake=45 type=Gaussian freq=8 t0=0.5
+source x=5e2 y=5e2 z=0 Mxx=1e15 Myy=1e15 Mzz=1e15 Mxy=0 Mxz=0 Myz=0 t0=0.5 freq=8.0 type=Ricker
 
 block vp=5800 vs=3200 rho=2000
+
+
+
+
 
 
 
