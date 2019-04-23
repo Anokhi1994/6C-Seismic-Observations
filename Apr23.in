@@ -1,0 +1,90 @@
+
+
+# This is an SW4 input file for problem LOH.1 from the 
+# SCEC test suite, see
+# "Steven Day et al., Tests of 3D Elastodynamic Codes:
+# Final report for lifelines project 1A01, Pacific Eartquake
+# Engineering Center, 2001".
+#
+# First we set up a grid with a spacing h (=20,40,50)
+# over a domain (X x Y x Z) 30000 x 30000 x 17000.
+# It will run from time t=0 to t=9
+#
+# The material properties are given by the
+# block commands. They describe a layer
+# on top of a half-space in the z-direction
+#
+# The solution is recorded at different locations
+# and saved in different sac-files  (in the LOH_1 directory)
+#
+# A single moment point source is used with 
+# the time dependency being the Gaussian function
+#
+grid h=25 nx=201 ny=201 nz=201 lat_p lon_p
+time steps=500
+fileio path=23AprOutput
+
+#specify the width of the super grid damping layer (30 is the default)
+supergrid gp=40
+
+block vp=5800 vs=3200 rho=2000
+
+
+
+# Gaussian time function gives the velocities directly
+# sigma=0.05 gives freq=1/sigma=20 (LOH.3)
+# sigma=0.06 gives freq=1/sigma=16.6667 (LOH.1)
+# t0 = 6*sigma = 0.36 avoids (most) startup transients and is
+# consistent with the matlab script PlotAnalyticalLOH1.m
+source x=1500 y=1000 z=50 Mxx=1e15 Myy=1e15 Mzz=1e15 Mxy=1e15 Mxz=1e15 Myz=1e15 t0=0.5 freq=8.0 type=Ricker
+
+#
+# Note that all recording stations are relative to the (0,0,0) origin
+#
+rec x=2000 y=2000 z=0 file=surface variables=curl sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=0 file=surface sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=0 file=surface variables=velocity sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=2000 file=sta01 variables=curl sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=2000 file=sta01 sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=2000 file=sta01 variables=velocity sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=2500 file=sta02 variables=curl sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=2500 file=sta02 sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=2500 file=sta02 variables=velocity sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=3000 file=sta03 variables=curl sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=3000 file=sta03 sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=3000 file=sta03 variables=velocity sacformat=1 usgsformat=0
+
+
+=2000 z=3500 file=sta04 variables=curl sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=3500 file=sta04 sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=3500 file=sta04 variables=velocity sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=4000 file=sta05 variables=curl sacformat=1 usgsformat=0
+rec x=2000 y=2000 z=4000 file=sta05 sacformat=1 usgsformat=0
+
+
+
+rec x=2000 y=2000 z=4000 file=sta05 variables=velocity sacformat=1 usgsformat=0
+
+
+# material images
+image mode=mu z=0 file=hor cycle=10
+image mode=lambda z=0 file=hor cycle=10
+image mode=rho z=0 file=hor cycle=10
+
+image mode=lambda y=1e3 file=ver cycle=10
+image mode=mu y=1e3 file=ver cycle=10
+image mode=rho y=1e3 file=ver cycle=10
+
+#solution images
+image mode=ux y=4000 file=surf_ux timeInterval=0.5
+image mode=curl y=4000 file=surf_ux timeInterval=0.5
+
+
+
+# no point saving uz and ux on this plane, because they are zero by symmetry
+mage mode=uy y=15e3 file=ver timeInterval=0.5
+
+
+
+
+
