@@ -37,7 +37,7 @@ block vp=5800 vs=3200 rho=2000
 # t0 = 6*sigma = 0.36 avoids (most) startup transients and is
 # consistent with the matlab script PlotAnalyticalLOH1.m
 source x=1000 y=1000 z=0 Mxx=1e15 Myy=1e15 Mzz=1e15 Mxy=0 Mxz=0 Myz=0 t0=0.5 freq=8.0 type=Ricker
-#source  x=1500 y=1000 z=50 m0=2 strike=60
+#source  x=1000 y=1000 z=0 x=1500 y=1000 z=0 m0=2 strike=60
 
 #
 # Note that all recording stations are relative to the (0,0,0) origin
