@@ -20,12 +20,12 @@
 # A single moment point source is used with 
 # the time dependency being the Gaussian function
 #
-grid h=25 nx=201 ny=201 nz=201 lat_p lon_p
+grid h=25 nx=201 ny=201 nz=201 
 time steps=500
 fileio path=3MayOutput
 
 #specify the width of the super grid damping layer (30 is the default)
-supergrid gp=40
+supergrid gp=30
 
 block vp=5800 vs=3200 rho=2000
 
@@ -48,27 +48,35 @@ source x=1000 y=1000 z=0 Mxx=1e15 Myy=1e15 Mzz=1e15 Mxy=0 Mxz=0 Myz=0 t0=0.5 fre
 rec x=1950 y=2050 z=0 file=S1 variables=curl sacformat=1 usgsformat=0
 rec x=1950 y=2050 z=0 file=S1  sacformat=1 usgsformat=0
 rec x=1950 y=2050 z=0 file=S1  variables=velocity sacformat=1 usgsformat=0
+
 rec x=2000 y=2050 z=0 file=S2 variables=curl sacformat=1 usgsformat=0
 rec x=2000 y=2050 z=0 file=S2 sacformat=1 usgsformat=0
 rec x=2000 y=2050 z=0 file=S2 variables=velocity sacformat=1 usgsformat=0
+
 rec x=2050 y=2050 z=0 file=S3 variables=curl sacformat=1 usgsformat=0
 rec x=2050 y=2050 z=0 file=S3 sacformat=1 usgsformat=0
 rec x=2050 y=2050 z=0 file=S3 variables=velocity sacformat=1 usgsformat=0
+
 rec x=1950 y=2000 z=0 file=S4 variables=curl sacformat=1 usgsformat=0
 rec x=1950 y=2000 z=0 file=S4 sacformat=1 usgsformat=0
 rec x=1950 y=2000 z=0 file=S4 variables=velocity sacformat=1 usgsformat=0
+
 rec x=2000 y=2000 z=0 file=S5 variables=curl sacformat=1 usgsformat=0
 rec x=2000 y=2000 z=0 file=S5 sacformat=1 usgsformat=0
 rec x=2000 y=2000 z=0 file=S5 variables=velocity sacformat=1 usgsformat=0
+
 rec x=2050 y=2000 z=0 file=S6 variables=curl sacformat=1 usgsformat=0
 rec x=2050 y=2000 z=0 file=S6 sacformat=1 usgsformat=0
 rec x=2050 y=2000 z=0 file=S6 variables=velocity sacformat=1 usgsformat=0
+
 rec x=1950 y=1950 z=0 file=S7 variables=curl sacformat=1 usgsformat=0
 rec x=1950 y=1950 z=0 file=S7 sacformat=1 usgsformat=0
 rec x=1950 y=1950 z=0 file=S7 variables=velocity sacformat=1 usgsformat=0
+
 rec x=2000 y=1950 z=0 file=S8 variables=curl sacformat=1 usgsformat=0
 rec x=2000 y=1950 z=0 file=S8 sacformat=1 usgsformat=0
 rec x=2000 y=1950 z=0 file=S8 variables=velocity sacformat=1 usgsformat=0
+
 rec x=2050 y=1950 z=0 file=S9 variables=curl sacformat=1 usgsformat=0
 rec x=2050 y=1950 z=0 file=S9 sacformat=1 usgsformat=0
 rec x=2050 y=1950 z=0 file=S9 variables=velocity sacformat=1 usgsformat=0
